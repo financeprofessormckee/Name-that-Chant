@@ -67,16 +67,15 @@ let answered = false;
 let synth = null;        // active CreateSynth instance, if any
 let audioCtx = null;     // shared AudioContext, created on first play
 
-// Full General MIDI soundfont — includes the choir voice (program 52). abcjs's
-// built-in default soundfont is piano-only, so a vocal voicing needs this one.
+// Full General MIDI soundfont — includes the church organ (program 19). abcjs's
+// built-in default soundfont is piano-only, so the organ voicing needs this one.
 const SOUND_FONT_URL = "https://paulrosen.github.io/midi-js-soundfonts/FluidR3_GM/";
 
 function renderScore(piece) {
   scoreEl.innerHTML = "";
-  // Inject a choir MIDI voicing (GM program 52, "Choir Aahs") for playback, after
-  // the K: line — the natural voice for monophonic chant. The directive doesn't
-  // render visually; it only changes the sound.
-  const abc = piece.abc.replace(/(K:[^\n]*\n)/, "$1%%MIDI program 52\n");
+  // Inject a church-organ MIDI voicing (GM program 19) for playback, after the
+  // K: line. The directive doesn't render visually — it only changes the sound.
+  const abc = piece.abc.replace(/(K:[^\n]*\n)/, "$1%%MIDI program 19\n");
   // Fixed staffwidth; CSS (svg{max-width:100%}) scales it down on narrow screens.
   // Avoids the window-resize listener that responsive:"resize" would attach.
   const rendered = window.ABCJS.renderAbc(scoreEl, abc, {
@@ -202,7 +201,7 @@ async function play() {
     });
     await synth.prime();
     synth.start();
-    playNote.textContent = "playing (choir voicing)";
+    playNote.textContent = "playing (church-organ voicing)";
   } catch (err) {
     console.error("Playback failed:", err);
     const detail = err && (err.message || err.status) ? (err.message || err.status) : String(err);

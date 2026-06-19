@@ -2,7 +2,7 @@
 
 A liturgical trivia drill: the opening notes of a famous Gregorian chant appear
 as engraved notation, and you name the chant and its place in the liturgy from
-four choices. You can also hear the snippet sung back in a choir voicing.
+four choices. You can also hear the snippet played back in an organ voicing.
 
 **Scoring:** one point per correct identification; tracks streak, best streak
 (saved in your browser), and accuracy. Streaks are kept separately from the
@@ -12,8 +12,8 @@ companion game, *Name That Organ Piece*.
 
 - A short passage of notation appears at the top. Pick the matching chant from the
   four options (mouse, or number keys **1–4**).
-- **▶ Hear it** plays the passage (a choir voicing via the bundled synth — needs an
-  internet connection the first time, to fetch the instrument sounds).
+- **▶ Hear it** plays the passage (a church-organ voicing via the bundled synth —
+  needs an internet connection the first time, to fetch the instrument sounds).
 - After answering, the chant's name, its liturgical use, and a note are revealed.
 - **Enter** or **N** brings up the next chant.
 
